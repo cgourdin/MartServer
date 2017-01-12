@@ -30,6 +30,7 @@ import org.glassfish.jersey.servlet.ServletContainer;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.occiware.mart.server.servlet.impl.parser.json.JsonOcciParser;
 import org.occiware.mart.server.servlet.model.ConfigurationManager;
 import org.occiware.mart.server.servlet.utils.Constants;
 
@@ -246,8 +247,10 @@ public class ServerTest {
                 .accept("application/json")
                 .send();
         statusResponse = response.getStatus();
-        assertTrue(statusResponse == Response.Status.NOT_FOUND.getStatusCode());
+        assertTrue(statusResponse == Response.Status.OK.getStatusCode()); // Warning, must be not found on other parsers than json.
         result = response.getContentAsString();
+        assertNotNull(result);
+        assertTrue(result.equals(JsonOcciParser.EMPTY_JSON));
         System.out.println(result);
 
         // Search on a relative path location with included key.
@@ -721,8 +724,11 @@ public class ServerTest {
                 .accept("application/json")
                 .send();
         statusResponse = response.getStatus();
-        assertTrue(statusResponse == Response.Status.NOT_FOUND.getStatusCode());
+        assertTrue(statusResponse == Response.Status.OK.getStatusCode());
+
         result = response.getContentAsString();
+        assertNotNull(result);
+        assertTrue(result.equals(JsonOcciParser.EMPTY_JSON));
         System.out.println(result);
 
 
@@ -742,8 +748,10 @@ public class ServerTest {
                 .accept("application/json")
                 .send();
         statusResponse = response.getStatus();
-        assertTrue(statusResponse == Response.Status.NOT_FOUND.getStatusCode());
+        assertTrue(statusResponse == Response.Status.OK.getStatusCode());
         result = response.getContentAsString();
+        assertNotNull(result);
+        assertTrue(result.equals(JsonOcciParser.EMPTY_JSON));
         System.out.println(result);
 
     }
