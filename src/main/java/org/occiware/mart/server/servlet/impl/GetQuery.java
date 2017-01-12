@@ -120,7 +120,7 @@ public class GetQuery extends AbstractGetQuery {
 
                     String locationTmp;
                     try {
-                        locationTmp = ConfigurationManager.getEntityRelativePath(entityId);
+                        locationTmp = ConfigurationManager.getLocation(entityId);
                         locationTmp = locationTmp.replace(entityId, "");
                     } catch (ConfigurationException ex) {
                         try {
