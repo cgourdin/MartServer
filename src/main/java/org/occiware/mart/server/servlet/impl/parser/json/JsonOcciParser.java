@@ -32,7 +32,6 @@ import org.occiware.mart.server.servlet.facade.AbstractRequestParser;
 import org.occiware.mart.server.servlet.impl.parser.json.render.*;
 import org.occiware.mart.server.servlet.impl.parser.json.render.queryinterface.*;
 import org.occiware.mart.server.servlet.impl.parser.json.utils.InputData;
-import org.occiware.mart.server.servlet.impl.parser.json.utils.ValidatorUtils;
 import org.occiware.mart.server.servlet.model.ConfigurationManager;
 import org.occiware.mart.server.servlet.model.exceptions.ConfigurationException;
 import org.occiware.mart.server.servlet.utils.Constants;
@@ -46,9 +45,6 @@ import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
-import java.text.ParseException;
 import java.util.*;
 
 /**
